@@ -1,0 +1,21 @@
+import { Helmet } from "react-helmet-async";
+
+type SEOProps = {
+  title: string;
+  description: string;
+};
+
+export default function SEO({ title, description }: SEOProps) {
+  return (
+    <Helmet>
+      <title>{title} | React SEO Playground</title>
+      <meta name="description" content={description} />
+      <meta name="robots" content="index, follow" />
+
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+    </Helmet>
+  );
+}
